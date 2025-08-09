@@ -1,0 +1,28 @@
+﻿@model List<Presence>
+
+<div class="flex-1 flex flex-col items-center mt-3 ">
+    <div class="card card-border bg-base-100 w-4/5">
+        <div class="card-body">
+            <h2 class="card-title">Total de Confirmações</h2>
+            <h2 class="text-4xl font-bold my-2">@Model.Count</h2>
+            <p>pessoas confirmaram presença</p>
+        </div>
+    </div>
+
+    <div class="card card-border bg-base-100 w-4/5 mt-6 mb-3">
+        <div class="card-body">
+            <h2 class="card-title">Lista de confirmações</h2>
+            <p>Todas as pessoas que confirmaram presença no chá da Heloísa</p>
+            <div class="mt-4">
+                @foreach(var presence in Model) {
+                    <div class="card card-border bg-base-200 w-full my-4">
+                        <div class="card-body">
+                            <h2 class="card-title">@presence.FullName</h2>
+                            <p>@presence.CreatedAt</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
