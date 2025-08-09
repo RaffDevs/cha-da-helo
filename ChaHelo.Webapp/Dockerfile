@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y curl && \
     npm install -g npm@latest
 
 WORKDIR /src/ChaHelo.Webapp
-RUN npm ci  # instala dependências front-end
+RUN npm i  # instala dependências front-end
 
 # Copia o restante do código
 WORKDIR /src
