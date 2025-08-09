@@ -36,12 +36,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Presence}/{action=Index}/{id?}");
 
-if (app.Environment.IsDevelopment())
-{
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<ChaHeloDbContext>();
-    db.Database.Migrate();
-}
-
+ using var scope = app.Services.CreateScope();
+var db = scope.ServiceProvider.GetRequiredService<ChaHeloDbContext>();
+db.Database.Migrate();
 
 app.Run();
